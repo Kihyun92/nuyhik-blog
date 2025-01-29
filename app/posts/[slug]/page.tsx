@@ -29,8 +29,15 @@ async function getPostData(slug: string): Promise<Post> {
   };
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const { metadata, contentHtml } = await getPostData(params.slug);
+type Props =  {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export default async function PostPage({ params }: Props) {
+  const slug = (await params).slug
+  const { metadata, contentHtml } = await getPostData(slug);
 
   return (
     <div>
