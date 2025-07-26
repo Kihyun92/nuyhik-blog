@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: Arial, sans-serif;
   max-width: 700px;
@@ -16,4 +20,90 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.markdown-body {
+  font-family: 'Inter', 'Pretendard', 'Apple SD Gothic Neo', Arial, sans-serif;
+  color: #222;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  background: #fff;
+  word-break: break-word;
+}
+
+.markdown-body h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body h3 {
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  background: #fafbfc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #eaeaea;
+  padding: 0.75em 1em;
+  text-align: left;
+}
+
+.markdown-body th {
+  background: #f5f7fa;
+  font-weight: 600;
+}
+
+.markdown-body tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.markdown-body code {
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+.markdown-body pre {
+  background: #23272f;
+  color: #f8f8f2;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.markdown-body a {
+  color: #0070f3;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.markdown-body a:hover {
+  color: #0051a3;
+}
+
+.markdown-body a:hover {
+  color: #0051a3;
 }

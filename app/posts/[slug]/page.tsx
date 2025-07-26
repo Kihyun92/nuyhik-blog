@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkGfm from "remark-gfm";
 import { Post } from "../../../types/post";
 
 export async function generateStaticParams() {
@@ -21,7 +22,10 @@ async function getPostData(slug: string): Promise<Post> {
     data: Post["metadata"];
     content: string;
   };
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = await remark()
+    .use(remarkGfm)
+    .use(html)
+    .process(content);
   return {
     slug,
     metadata: data,
@@ -41,10 +45,14 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <div>
-      <h1>{metadata.title}</h1>
-      <p>created at: {metadata.createdDate}</p>
-      <p>updated at: {metadata.updatedDate ?? metadata.createdDate}</p>
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <header>
+        <p className="text-4xl font-bold">{metadata.title}</p>
+        <p className='text-right text-sm'>등록일: {metadata.createdDate}</p>
+        <p className='text-right text-sm'>수정일: {metadata.updatedDate ?? metadata.createdDate}</p>
+      </header>
+      <article>
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      </article>
     </div>
   );
 }
