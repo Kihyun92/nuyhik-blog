@@ -1,6 +1,7 @@
 export interface PostMetadata {
   title: string;
-  date: string;
+  createdDate: string;
+  updatedDate: string;
 }
 
 export interface Post {

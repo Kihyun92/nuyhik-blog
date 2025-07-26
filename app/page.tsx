@@ -22,14 +22,16 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1>📖 블로그</h1>
+      <h1>📖 김기현 블로그</h1>
+      <p>기억 정리를 위한 블로그입니다. 최대한 심플하게 작성하기 때문에 잘못된 정보가 있을 수 있습니다.</p>
+      <p>잘못된 부분에 대한 지적은 언제든 환영입니다 🤗</p>
       <ul>
         {posts.map((post) =>   (
           <li key={post.slug}>
             <Link href={`/posts/${post.slug}`}>
               {post.metadata.title}
             </Link>{" "}
-            - {post.metadata.date}
+            - {post.metadata.updatedDate ?? post.metadata.createdDate}
           </li>
         ))}
       </ul>

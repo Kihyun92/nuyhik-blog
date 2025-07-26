@@ -42,7 +42,8 @@ export default async function PostPage({ params }: Props) {
   return (
     <div>
       <h1>{metadata.title}</h1>
-      <p>{metadata.date}</p>
+      <p>created at: {metadata.createdDate}</p>
+      <p>updated at: {metadata.updatedDate ?? metadata.createdDate}</p>
       <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
     </div>
   );
