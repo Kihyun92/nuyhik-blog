@@ -25,9 +25,9 @@ export default function HomePage() {
       <h1>📖 김기현 블로그</h1>
       <p>기억 정리를 위한 블로그입니다. 최대한 심플하게 작성하기 때문에 잘못된 정보가 있을 수 있습니다.</p>
       <p>잘못된 부분에 대한 지적은 언제든 환영입니다 🤗</p>
-      <ul>
+      <ul className='pt-4 pb-4'>
         {posts.map((post) =>   (
-          <li key={post.slug}>
+          <li key={post.slug} className='pt-1 pb-1'>
             <Link href={`/posts/${post.slug}`}>
               {post.metadata.title}
             </Link>{" "}
